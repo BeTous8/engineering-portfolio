@@ -33,16 +33,37 @@ deploy previews.
 ## Current state / known work
 
 `site/index.html` is the export from Claude Design: a self-extracting bundle
-that inlines every asset (hero image, IBM Plex woff2 subsets, React 18 UMD,
-and the Claude Design runtime) as base64 in a manifest, then unpacks them to
-blob URLs on load and swaps the document.
+that inlines every asset (hero image, IBM Plex woff2 subsets, React 18 UMD, and
+the Claude Design runtime) as base64 in a manifest, then unpacks them to blob
+URLs on load and swaps the document.
 
-That works, but it means:
+**Done**
 
-- ~1 MB must download before anything paints, on every visit
-- no asset is independently cacheable — one byte changes, all 1 MB re-downloads
-- the markup is only present after JS runs, so crawlers and link previews see
-  an empty page
-- there are no `og:`/`twitter:` meta tags, favicon, `robots.txt`, or `sitemap.xml`
+- Social/search metadata, favicon, `robots.txt`, `sitemap.xml` — these live in
+  the OUTER shell `<head>`, because crawlers don't run the bundle.
+- The Memora embed in section 01. `memoraapp.netlify.app` sent
+  `X-Frame-Options: DENY`, so the "embedded live" frame rendered as a broken
+  box. That app now sends a CSP `frame-ancestors` allowlist naming this origin
+  instead (see `next.config.mjs` in the `gift-registry` repo).
 
-Unpacking the bundle into real files under `site/assets/` is the next step.
+**Outstanding**
+
+- **First contentful paint is ~5.6s.** ~1MB of base64 must decode and React must
+  mount before anything is on screen. Unpacking the manifest into real files
+  under `site/assets/` and rewriting the uuid references fixes this without any
+  redesign — the bundler's own unpack logic shows exactly what to substitute.
+- No asset is independently cacheable while everything lives in one file.
+- Page content still only exists after JS runs, so search engines index very
+  little beyond the meta tags.
+- No custom domain.
+
+### Editing the page
+
+The markup is not plain HTML. It is a custom `x-dc` DSL (`<sc-if>`, `<sc-for>`,
+`style-hover=`, `{{bindings}}`) inside a JSON string in the `__bundler/template`
+script tag, alongside a React component class driving the SQL console.
+
+If you re-encode that JSON, **escape every `/` as `/`**, the way the
+bundler does. The template contains its own `</script>` tag; written literally
+it closes the enclosing script element early and the browser parses the rest of
+the bundle as markup.
