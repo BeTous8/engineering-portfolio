@@ -1,0 +1,13 @@
+# Normalize line endings on commit; check out native on Windows.
+* text=auto
+
+# Binary assets — never touch these.
+*.woff2 binary
+*.woff  binary
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.webp  binary
+*.avif  binary
+*.ico   binary
+*.pdf   binary
