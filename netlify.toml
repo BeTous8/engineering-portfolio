@@ -14,3 +14,10 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
     Cache-Control = "public, max-age=0, must-revalidate"
+
+# Fingerprint-free assets that change rarely. Kept separate from the catch-all
+# above so the HTML entry point stays revalidated while these are cached hard.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

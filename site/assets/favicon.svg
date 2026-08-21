@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BT">
+  <rect width="64" height="64" rx="12" fill="#04081A"/>
+  <!-- Pipeline motif from the hero, reduced to two strokes so it survives 16px. -->
+  <g fill="none" stroke="#2A93FF" stroke-width="3.5" stroke-linecap="round">
+    <path d="M12 50 L22 40 L46 40"/>
+  </g>
+  <circle cx="49" cy="40" r="4.5" fill="#B9E6FF"/>
+  <text x="32" y="30" text-anchor="middle"
+        font-family="'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="26" font-weight="700" fill="#EAF1FA">BT</text>
+</svg>

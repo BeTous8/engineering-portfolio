@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://benjamin-tousifar.netlify.app/sitemap.xml
