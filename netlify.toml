@@ -1,0 +1,16 @@
+# Netlify build configuration
+# Static site — no build step, we publish the site/ directory as-is.
+
+[build]
+  publish = "site"
+
+# Default: never let the HTML entry point go stale. It is the only file
+# that changes shape between deploys right now (everything else is inlined).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+    Cache-Control = "public, max-age=0, must-revalidate"
