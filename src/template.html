@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="2ac3b570-1d73-416a-abf9-f0f066de25e0"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Benjamin Tousifar — Data Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("3f7583ea-3bb8-4edc-b5a0-923705c9e033") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("8cc443d7-ac74-4d53-9f4c-e60e1090328f") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("baf7c9cc-7adb-482e-b991-90d21451da9b") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("66ae79b5-498a-4c38-8110-7915311dc12c") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("b8c15ac7-21f9-4ad4-a79f-4812cb05772b") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("7bea8358-17a9-486d-b066-e3ede69b6d2f") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("f19412bf-2d2a-4c49-8082-2f1cb37ea1f2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("4ea30ed9-08ad-4745-81f6-569394d53089") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("821757aa-17be-4a1d-927e-644485cc97c7") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("15aac951-44ce-4fc1-9aba-b2c894d1d3c8") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("f2696e62-d381-4b56-a755-a73b36a170d6") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("f1fc07a0-ceb4-4a83-8a2c-6692f488e94c") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("7fc1a07f-930a-43e2-8286-32db1030427f") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("8961d1c3-8538-4a2f-bbde-4bab6e0ce17c") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("595c5a85-59fc-4039-aa45-22c6fa56ec49") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("4b7f7b50-cb64-45cc-b3b9-a310f276f1a1") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("f2696e62-d381-4b56-a755-a73b36a170d6") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("f1fc07a0-ceb4-4a83-8a2c-6692f488e94c") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("7fc1a07f-930a-43e2-8286-32db1030427f") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("8961d1c3-8538-4a2f-bbde-4bab6e0ce17c") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("595c5a85-59fc-4039-aa45-22c6fa56ec49") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("4b7f7b50-cb64-45cc-b3b9-a310f276f1a1") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("f2696e62-d381-4b56-a755-a73b36a170d6") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("f1fc07a0-ceb4-4a83-8a2c-6692f488e94c") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("7fc1a07f-930a-43e2-8286-32db1030427f") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("8961d1c3-8538-4a2f-bbde-4bab6e0ce17c") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("595c5a85-59fc-4039-aa45-22c6fa56ec49") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("4b7f7b50-cb64-45cc-b3b9-a310f276f1a1") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("642dfa3e-bfdd-4cc5-8177-0bbceac0cde4") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("c8f86487-39b5-4385-bf8f-d282a3168816") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("17bb3c9a-51b5-4856-b007-f208a2845f78") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("37910490-3b3c-4242-80db-c66f96b56b35") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("04491a40-813b-42e0-adc8-cf7514589ba7") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("5f35a6bb-2af0-4936-9730-5c2911b42538") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("cce9c2d8-0bed-40f3-ad35-a225ee42381d") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("cf4399a6-8ed8-4e21-bbdc-a192d9577d35") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("51564d2e-5782-4139-ae1b-43ecebbd53df") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("e35f494b-db28-4760-8c4f-27476247a9c6") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("02fbd6a9-066c-484f-a1c4-4a17920af265") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("e3796b43-0dc7-4edb-b62a-f6c64ee46a70") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+:root{--hero-align:center;--caption-display:block;--hero-pb:clamp(2rem,6vw,5rem);--art-x:64%;--art-y:50%;--art-dim:.72;--scrim:linear-gradient(100deg,rgba(4,8,26,.97) 0%,rgba(4,8,26,.95) 34%,rgba(4,8,26,.9) 52%,rgba(4,8,26,.62) 70%,rgba(4,8,26,.12) 88%,rgba(4,8,26,0) 100%)}
+@media (max-width:760px){:root{--hero-align:flex-end;--caption-display:none;--hero-pb:clamp(3rem,14vw,6rem);--art-x:50%;--art-y:22%;--art-dim:.8;--scrim:linear-gradient(178deg,rgba(4,8,26,.42) 0%,rgba(4,8,26,.8) 38%,rgba(4,8,26,.95) 62%,rgba(4,8,26,.98) 82%)}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;background:#04081A}
+body{color:#EAF1FA;font-family:"IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+a{color:#B9E6FF}a:hover{color:#2A93FF}
+::selection{background:rgba(42,147,255,.35)}
+:focus-visible{outline:2px solid #2A93FF;outline-offset:3px}
+:focus:not(:focus-visible){outline:none}
+@keyframes flow{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
+@keyframes flick-a{0%,38%{opacity:0}41%{opacity:.9}45%{opacity:.1}49%{opacity:.75}56%{opacity:.25}61%,100%{opacity:0}}
+@keyframes flick-b{0%,12%{opacity:0}15%{opacity:.8}19%{opacity:.2}24%{opacity:.65}30%{opacity:0}68%{opacity:0}72%{opacity:.7}77%,100%{opacity:0}}
+@keyframes flick-c{0%,55%{opacity:0}58%{opacity:.55}62%{opacity:.9}66%{opacity:.3}71%{opacity:.8}78%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}[data-hero-fx]{display:none !important}}
+</style>
+</helmet>
+
+
+
+<a href="#memora" style="position:fixed;left:1rem;top:-4rem;z-index:99;background:#081130;color:#EAF1FA;font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:.6rem 1rem;border:1px solid #2A93FF;border-radius:6px;transition:top .15s ease" style-focus="top:1rem">Skip to content</a>
+
+<nav aria-label="Sections" style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;flex-wrap:wrap;gap:.4rem 1.15rem;padding:.7rem clamp(1rem,4vw,2.5rem);background:rgba(4,8,26,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(126,148,180,.14);font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase">
+  <a href="#top" style="color:#EAF1FA;text-decoration:none;font-weight:500">BT_</a>
+  <div style="flex:1"></div>
+  <a href="#memora" style="color:#7E94B4;text-decoration:none;padding:.2rem 0;transition:color .15s ease" style-hover="color:#2A93FF">Live</a>
+  <a href="#sql" style="color:#7E94B4;text-decoration:none;padding:.2rem 0;transition:color .15s ease" style-hover="color:#2A93FF">SQL</a>
+  <a href="#projects" style="color:#7E94B4;text-decoration:none;padding:.2rem 0;transition:color .15s ease" style-hover="color:#2A93FF">Projects</a>
+  <a href="#experience" style="color:#7E94B4;text-decoration:none;padding:.2rem 0;transition:color .15s ease" style-hover="color:#2A93FF">Experience</a>
+  <a href="#contact" style="color:#7E94B4;text-decoration:none;padding:.2rem 0;transition:color .15s ease" style-hover="color:#2A93FF">Contact</a>
+</nav>
+
+<header id="top" data-screen-label="Hero" style="position:relative;min-height:100svh;display:flex;align-items:var(--hero-align);overflow:hidden;isolation:isolate;background:radial-gradient(120% 90% at 78% 34%, #0B1E49 0%, #071231 42%, #04081A 78%)">
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:0">
+    <div style="position:absolute;left:var(--art-x);top:var(--art-y);transform:translate(calc(-1 * var(--art-x)), calc(-1 * var(--art-y)));width:max(100%, 184svh);aspect-ratio:1206 / 656">
+      <img src="3f06fe2a-ed30-41b1-8ec2-5ef76631160b" alt="" decoding="async" style="width:100%;height:100%;display:block;filter:saturate(.92) contrast(1.02) brightness(var(--art-dim))">
+      <sc-if value="{{heroFx}}" hint-placeholder-val="{{true}}">
+      <div style="position:absolute;inset:0;background:url(&quot;3f06fe2a-ed30-41b1-8ec2-5ef76631160b&quot;) 0 0/100% 100% no-repeat;mix-blend-mode:screen;filter:brightness(2.1) saturate(1.2);-webkit-mask-image:radial-gradient(9% 12% at 23% 21%,#000,transparent 70%),radial-gradient(8% 11% at 81% 72%,#000,transparent 70%);mask-image:radial-gradient(9% 12% at 23% 21%,#000,transparent 70%),radial-gradient(8% 11% at 81% 72%,#000,transparent 70%);animation:flick-a 5.3s steps(1,end) infinite" data-hero-fx=""></div>
+      <div style="position:absolute;inset:0;background:url(&quot;3f06fe2a-ed30-41b1-8ec2-5ef76631160b&quot;) 0 0/100% 100% no-repeat;mix-blend-mode:screen;filter:brightness(2.1) saturate(1.2);-webkit-mask-image:radial-gradient(8% 11% at 78% 19%,#000,transparent 70%),radial-gradient(9% 12% at 17% 71%,#000,transparent 70%);mask-image:radial-gradient(8% 11% at 78% 19%,#000,transparent 70%),radial-gradient(9% 12% at 17% 71%,#000,transparent 70%);animation:flick-b 8.1s steps(1,end) .9s infinite" data-hero-fx=""></div>
+      <div style="position:absolute;inset:0;background:url(&quot;3f06fe2a-ed30-41b1-8ec2-5ef76631160b&quot;) 0 0/100% 100% no-repeat;mix-blend-mode:screen;filter:brightness(2.1) saturate(1.2);-webkit-mask-image:radial-gradient(6% 9% at 50% 46%,#000,transparent 72%),radial-gradient(5% 8% at 63% 30%,#000,transparent 72%),radial-gradient(5% 8% at 38% 60%,#000,transparent 72%);mask-image:radial-gradient(6% 9% at 50% 46%,#000,transparent 72%),radial-gradient(5% 8% at 63% 30%,#000,transparent 72%),radial-gradient(5% 8% at 38% 60%,#000,transparent 72%);animation:flick-c 6.4s steps(1,end) 2.1s infinite" data-hero-fx=""></div>
+      <svg sc-camel-view-box="0 0 1206 656" sc-camel-preserve-aspect-ratio="none" data-hero-fx="" style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:screen;filter:drop-shadow(0 0 6px rgba(42,147,255,.55));opacity:calc(var(--art-dim) + .18)">
+      <defs>
+        <path id="s-b1" sc-camel-path-length="1000" d="M -20 630 C 70 605 140 585 215 558"></path>
+        <path id="s-b2" sc-camel-path-length="1000" d="M 350 158 C 392 190 438 218 486 240"></path>
+        <path id="s-b3" sc-camel-path-length="1000" d="M 520 236 C 556 254 585 268 622 288"></path>
+        <path id="s-b4" sc-camel-path-length="1000" d="M 250 482 C 320 452 372 424 432 400"></path>
+        <path id="s-b5" sc-camel-path-length="1000" d="M 500 406 C 540 422 566 438 602 462"></path>
+        <path id="s-p1" sc-camel-path-length="1000" d="M 890 148 C 866 166 840 190 812 204"></path>
+        <path id="s-p2" sc-camel-path-length="1000" d="M 640 196 C 680 202 712 212 748 226"></path>
+        <path id="s-p3" sc-camel-path-length="1000" d="M 786 272 C 800 279 814 285 832 293"></path>
+        <path id="s-p4" sc-camel-path-length="1000" d="M 622 316 C 662 332 700 346 742 362"></path>
+        <path id="s-p5" sc-camel-path-length="1000" d="M 634 494 C 656 505 676 521 700 541"></path>
+        <path id="s-p6" sc-camel-path-length="1000" d="M 1022 556 C 1082 582 1136 608 1206 642"></path>
+      </defs>
+        <use href="#s-b1" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:9;opacity:.16"></use>
+        <use href="#s-b1" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:10;opacity:.5;stroke-dasharray:34 966;animation:flow 3.4s linear 0s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b1" style="fill:none;stroke-linecap:round;stroke:#DFF4FF;stroke-width:3.4;stroke-dasharray:16 984;animation:flow 3.4s linear 0s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b1" style="fill:none;stroke-linecap:round;stroke:#DFF4FF;stroke-width:2;opacity:.85;stroke-dasharray:6 994;animation:flow 2.65s linear 1.43s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b1" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:6;opacity:.55;stroke-dasharray:4 996;animation:flow 4.22s linear 2.24s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b2" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:9;opacity:.16"></use>
+        <use href="#s-b2" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:10;opacity:.5;stroke-dasharray:34 966;animation:flow 2.9s linear 0.7s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b2" style="fill:none;stroke-linecap:round;stroke:#DFF4FF;stroke-width:3.4;stroke-dasharray:16 984;animation:flow 2.9s linear 0.7s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b2" style="fill:none;stroke-linecap:round;stroke:#DFF4FF;stroke-width:2;opacity:.85;stroke-dasharray:6 994;animation:flow 2.26s linear 1.92s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b2" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:6;opacity:.55;stroke-dasharray:4 996;animation:flow 3.60s linear 2.61s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b3" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:9;opacity:.16"></use>
+        <use href="#s-b3" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:10;opacity:.5;stroke-dasharray:34 966;animation:flow 2.2s linear 1.4s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b3" style="fill:none;stroke-linecap:round;stroke:#DFF4FF;stroke-width:3.4;stroke-dasharray:16 984;animation:flow 2.2s linear 1.4s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b3" style="fill:none;stroke-linecap:round;stroke:#DFF4FF;stroke-width:2;opacity:.85;stroke-dasharray:6 994;animation:flow 1.72s linear 2.32s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b3" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:6;opacity:.55;stroke-dasharray:4 996;animation:flow 2.73s linear 2.85s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b4" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:9;opacity:.16"></use>
+        <use href="#s-b4" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:10;opacity:.5;stroke-dasharray:34 966;animation:flow 3.1s linear 0.3s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b4" style="fill:none;stroke-linecap:round;stroke:#DFF4FF;stroke-width:3.4;stroke-dasharray:16 984;animation:flow 3.1s linear 0.3s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b4" style="fill:none;stroke-linecap:round;stroke:#DFF4FF;stroke-width:2;opacity:.85;stroke-dasharray:6 994;animation:flow 2.42s linear 1.60s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b4" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:6;opacity:.55;stroke-dasharray:4 996;animation:flow 3.84s linear 2.35s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b5" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:9;opacity:.16"></use>
+        <use href="#s-b5" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:10;opacity:.5;stroke-dasharray:34 966;animation:flow 2.4s linear 1.1s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b5" style="fill:none;stroke-linecap:round;stroke:#DFF4FF;stroke-width:3.4;stroke-dasharray:16 984;animation:flow 2.4s linear 1.1s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b5" style="fill:none;stroke-linecap:round;stroke:#DFF4FF;stroke-width:2;opacity:.85;stroke-dasharray:6 994;animation:flow 1.87s linear 2.11s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-b5" style="fill:none;stroke-linecap:round;stroke:#2A93FF;stroke-width:6;opacity:.55;stroke-dasharray:4 996;animation:flow 2.98s linear 2.68s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p1" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:9;opacity:.16"></use>
+        <use href="#s-p1" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:10;opacity:.5;stroke-dasharray:34 966;animation:flow 2.4s linear 0.5s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p1" style="fill:none;stroke-linecap:round;stroke:#EDE4FF;stroke-width:3.4;stroke-dasharray:16 984;animation:flow 2.4s linear 0.5s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p1" style="fill:none;stroke-linecap:round;stroke:#EDE4FF;stroke-width:2;opacity:.85;stroke-dasharray:6 994;animation:flow 1.87s linear 1.51s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p1" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:6;opacity:.55;stroke-dasharray:4 996;animation:flow 2.98s linear 2.08s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p2" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:9;opacity:.16"></use>
+        <use href="#s-p2" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:10;opacity:.5;stroke-dasharray:34 966;animation:flow 2.3s linear 1.6s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p2" style="fill:none;stroke-linecap:round;stroke:#EDE4FF;stroke-width:3.4;stroke-dasharray:16 984;animation:flow 2.3s linear 1.6s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p2" style="fill:none;stroke-linecap:round;stroke:#EDE4FF;stroke-width:2;opacity:.85;stroke-dasharray:6 994;animation:flow 1.79s linear 2.57s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p2" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:6;opacity:.55;stroke-dasharray:4 996;animation:flow 2.85s linear 3.12s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p3" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:9;opacity:.16"></use>
+        <use href="#s-p3" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:10;opacity:.5;stroke-dasharray:34 966;animation:flow 1.5s linear 0.9s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p3" style="fill:none;stroke-linecap:round;stroke:#EDE4FF;stroke-width:3.4;stroke-dasharray:16 984;animation:flow 1.5s linear 0.9s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p3" style="fill:none;stroke-linecap:round;stroke:#EDE4FF;stroke-width:2;opacity:.85;stroke-dasharray:6 994;animation:flow 1.17s linear 1.53s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p3" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:6;opacity:.55;stroke-dasharray:4 996;animation:flow 1.86s linear 1.89s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p4" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:9;opacity:.16"></use>
+        <use href="#s-p4" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:10;opacity:.5;stroke-dasharray:34 966;animation:flow 3s linear 2s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p4" style="fill:none;stroke-linecap:round;stroke:#EDE4FF;stroke-width:3.4;stroke-dasharray:16 984;animation:flow 3s linear 2s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p4" style="fill:none;stroke-linecap:round;stroke:#EDE4FF;stroke-width:2;opacity:.85;stroke-dasharray:6 994;animation:flow 2.34s linear 3.26s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p4" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:6;opacity:.55;stroke-dasharray:4 996;animation:flow 3.72s linear 3.98s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p5" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:9;opacity:.16"></use>
+        <use href="#s-p5" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:10;opacity:.5;stroke-dasharray:34 966;animation:flow 2.2s linear 1.3s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p5" style="fill:none;stroke-linecap:round;stroke:#EDE4FF;stroke-width:3.4;stroke-dasharray:16 984;animation:flow 2.2s linear 1.3s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p5" style="fill:none;stroke-linecap:round;stroke:#EDE4FF;stroke-width:2;opacity:.85;stroke-dasharray:6 994;animation:flow 1.72s linear 2.22s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p5" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:6;opacity:.55;stroke-dasharray:4 996;animation:flow 2.73s linear 2.75s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p6" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:9;opacity:.16"></use>
+        <use href="#s-p6" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:10;opacity:.5;stroke-dasharray:34 966;animation:flow 3.6s linear 0.2s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p6" style="fill:none;stroke-linecap:round;stroke:#EDE4FF;stroke-width:3.4;stroke-dasharray:16 984;animation:flow 3.6s linear 0.2s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p6" style="fill:none;stroke-linecap:round;stroke:#EDE4FF;stroke-width:2;opacity:.85;stroke-dasharray:6 994;animation:flow 2.81s linear 1.71s infinite;will-change:stroke-dashoffset"></use>
+        <use href="#s-p6" style="fill:none;stroke-linecap:round;stroke:#8E6BFF;stroke-width:6;opacity:.55;stroke-dasharray:4 996;animation:flow 4.46s linear 2.58s infinite;will-change:stroke-dashoffset"></use>
+      </svg>
+      </sc-if>
+    </div>
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(46% 38% at 74% 44%, rgba(42,147,255,.20), transparent 70%),radial-gradient(30% 26% at 92% 68%, rgba(74,180,255,.12), transparent 72%);mix-blend-mode:screen"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:var(--scrim)"></div>
+
+  <div style="position:relative;z-index:2;padding:clamp(2rem,6vw,5rem) clamp(1.25rem,6vw,6rem) var(--hero-pb);max-width:min(760px, 92vw);background:radial-gradient(120% 76% at 22% 50%, rgba(4,8,26,.88) 0%, rgba(4,8,26,.7) 48%, rgba(4,8,26,.28) 76%, rgba(4,8,26,0) 100%)">
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#7E94B4;margin:0 0 1.6rem;display:flex;align-items:center;gap:.85rem;flex-wrap:wrap">Data Engineer <span style="display:inline-block;width:26px;height:1px;background:rgba(126,148,180,.28)"></span> San Diego <span style="display:inline-block;width:26px;height:1px;background:rgba(126,148,180,.28)"></span> DP-203 · SnowPro Core</p>
+    <h1 style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;font-size:clamp(2.9rem, 8.4vw, 6.2rem);line-height:.9;letter-spacing:-.025em;text-transform:uppercase;margin:0 0 1.5rem">Benjamin<br>Tousifar</h1>
+    <p style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:500;font-size:clamp(1.3rem, 2.9vw, 2.05rem);line-height:1.22;letter-spacing:-.008em;margin:0 0 1rem;max-width:20ch;color:#fff">Data engineer who writes <em style="font-style:normal;color:#2A93FF;text-shadow:0 0 26px rgba(42,147,255,.5)">production code</em>.</p>
+    <p style="font-weight:300;font-size:clamp(.95rem, 1.45vw, 1.08rem);line-height:1.65;color:#A9BAD2;margin:0 0 2.2rem;max-width:48ch;text-shadow:0 1px 18px rgba(4,8,26,.95)">Two years operating ETL pipelines for Fortune&nbsp;500 clients — millions of daily transactions across SAP&nbsp;HANA, Oracle, and Azure — plus systems I design, build, and run myself.</p>
+    <nav aria-label="Contact" style="display:flex;flex-wrap:wrap;gap:1.5rem;font-family:'IBM Plex Mono',monospace;font-size:.76rem;letter-spacing:.09em;text-transform:uppercase">
+      <a href="mailto:bn.tousifar86@gmail.com" style="color:#EAF1FA;text-decoration:none;padding-bottom:4px;border-bottom:1px solid rgba(126,148,180,.28);transition:color .2s ease,border-color .2s ease" style-hover="color:#2A93FF;border-color:#2A93FF">Email</a>
+      <a href="https://github.com/BeTous8" style="color:#EAF1FA;text-decoration:none;padding-bottom:4px;border-bottom:1px solid rgba(126,148,180,.28);transition:color .2s ease,border-color .2s ease" style-hover="color:#2A93FF;border-color:#2A93FF">GitHub</a>
+      <a href="https://www.linkedin.com/in/benjamin-tousifar-44054a112/" style="color:#EAF1FA;text-decoration:none;padding-bottom:4px;border-bottom:1px solid rgba(126,148,180,.28);transition:color .2s ease,border-color .2s ease" style-hover="color:#2A93FF;border-color:#2A93FF">LinkedIn</a>
+      <a href="https://memoraapp.netlify.app/" style="color:#EAF1FA;text-decoration:none;padding-bottom:4px;border-bottom:1px solid rgba(126,148,180,.28);transition:color .2s ease,border-color .2s ease" style-hover="color:#2A93FF;border-color:#2A93FF">Live&nbsp;project</a>
+    </nav>
+  </div>
+  <p style="position:absolute;right:clamp(1.25rem,4vw,3rem);bottom:clamp(1.25rem,4vw,2.4rem);z-index:2;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#A9BAD2;margin:0;display:var(--caption-display);background:rgba(4,8,26,.72);padding:.35rem .6rem;border-radius:4px">Scroll</p>
+</div></header>
+
+<section id="memora" data-screen-label="01 Live system" style="max-width:1100px;margin:0 auto;padding:clamp(4.5rem,9vw,7.5rem) clamp(1.25rem,5vw,3rem) 0;scroll-margin-top:3.5rem">
+  <div data-reveal="" style="display:flex;align-items:center;gap:1rem;margin-bottom:1.4rem">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.2em;color:#2A93FF">01</span>
+    <h2 style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;font-size:clamp(1.6rem,3.6vw,2.3rem);letter-spacing:-.015em;text-transform:uppercase;margin:0;line-height:1">Live system</h2>
+    <div aria-hidden="true" style="flex:1;height:1px;background:linear-gradient(90deg,rgba(42,147,255,.45),rgba(126,148,180,.18) 40%,transparent)"></div>
+  </div>
+  <p data-reveal="" style="font-weight:300;font-size:.95rem;line-height:1.65;color:#7E94B4;margin:0 0 2rem;max-width:62ch">Memora is a full-stack event-planning and gift-registry app I designed, built, and operate solo. What follows is the production deployment, embedded live — not a screenshot.</p>
+
+  <div data-reveal="" style="border:1px solid rgba(126,148,180,.22);border-radius:10px;overflow:hidden;background:#060D26;box-shadow:0 24px 60px rgba(3,7,19,.6)">
+    <div style="display:flex;align-items:center;gap:.9rem;padding:.6rem 1rem;border-bottom:1px solid rgba(126,148,180,.16);background:#081130">
+      <span aria-hidden="true" style="display:flex;gap:6px">
+        <span style="width:9px;height:9px;border-radius:50%;background:#1E4C8F;display:inline-block"></span>
+        <span style="width:9px;height:9px;border-radius:50%;background:#1E4C8F;display:inline-block"></span>
+        <span style="width:9px;height:9px;border-radius:50%;background:#1E4C8F;display:inline-block"></span>
+      </span>
+      <a href="https://memoraapp.netlify.app/" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:#B9E6FF;text-decoration:none;background:rgba(4,8,26,.7);border:1px solid rgba(126,148,180,.2);border-radius:5px;padding:.3rem .8rem;flex:1;max-width:340px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:border-color .2s ease" style-hover="border-color:#2A93FF">memoraapp.netlify.app ↗</a>
+      <span style="margin-left:auto;display:flex;align-items:center;gap:.45rem;font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:#7E94B4">
+        <span aria-hidden="true" style="width:6px;height:6px;border-radius:50%;background:#2A93FF;box-shadow:0 0 8px rgba(42,147,255,.9);display:inline-block"></span>LIVE
+      </span>
+    </div>
+    <sc-if value="{{embedLive}}" hint-placeholder-val="{{true}}">
+      <iframe src="https://memoraapp.netlify.app/" title="Memora — live application" loading="lazy" style="width:100%;height:min(64vh,560px);border:0;display:block;background:#0A1128"></iframe>
+    </sc-if>
+    <sc-if value="{{embedOff}}" hint-placeholder-val="{{false}}">
+      <a href="https://memoraapp.netlify.app/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;height:min(50vh,420px);background:repeating-linear-gradient(45deg,#060D26,#060D26 14px,#071231 14px,#071231 28px);font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.14em;color:#7E94B4;text-decoration:none;text-transform:uppercase">Open memoraapp.netlify.app ↗</a>
+    </sc-if>
+  </div>
+  <p data-reveal="" style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.12em;color:#51648A;margin:.8rem 0 0">// scroll inside the frame, or open it in its own tab</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:1rem;margin-top:2.4rem">
+    <div data-reveal="" style="border:1px solid rgba(126,148,180,.18);border-radius:10px;padding:1.3rem 1.3rem 1.5rem;background:linear-gradient(180deg,#071231 0%,#060D26 100%);transition:border-color .2s ease" style-hover="border-color:rgba(42,147,255,.5)">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:#2A93FF;margin:0 0 .9rem">Schema</p>
+      <h3 style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:1.12rem;line-height:1.2;margin:0 0 .7rem;color:#EAF1FA">Correctness lives in the database</h3>
+      <p style="font-weight:300;font-size:.88rem;line-height:1.7;color:#7E94B4;margin:0">Normalized PostgreSQL schema where the client is never trusted to keep data consistent: foreign keys with deliberate <code style="font-family:'IBM Plex Mono',monospace;font-size:.85em;color:#B9E6FF">ON DELETE</code> semantics (<code style="font-family:'IBM Plex Mono',monospace;font-size:.85em;color:#B9E6FF">RESTRICT</code> on rows carrying financial history), <code style="font-family:'IBM Plex Mono',monospace;font-size:.85em;color:#B9E6FF">CHECK</code> constraints on monetary and enum columns, and a partial unique index permitting only one active fulfillment per item.</p>
+    </div>
+    <div data-reveal="" style="border:1px solid rgba(126,148,180,.18);border-radius:10px;padding:1.3rem 1.3rem 1.5rem;background:linear-gradient(180deg,#071231 0%,#060D26 100%);transition:border-color .2s ease" style-hover="border-color:rgba(42,147,255,.5)">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:#2A93FF;margin:0 0 .9rem">Ingestion</p>
+      <h3 style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:1.12rem;line-height:1.2;margin:0 0 .7rem;color:#EAF1FA">One pipeline, many hostile sources</h3>
+      <p style="font-weight:300;font-size:.88rem;line-height:1.7;color:#7E94B4;margin:0">Heterogeneous third-party product data canonicalized to stable product keys. Structured APIs are preferred over scraping, falling back through JSON-LD → embedded JSON → Open Graph → per-store selectors, coalescing per field by source trust.</p>
+    </div>
+    <div data-reveal="" style="border:1px solid rgba(126,148,180,.18);border-radius:10px;padding:1.3rem 1.3rem 1.5rem;background:linear-gradient(180deg,#071231 0%,#060D26 100%);transition:border-color .2s ease" style-hover="border-color:rgba(42,147,255,.5)">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:#2A93FF;margin:0 0 .9rem">Payments</p>
+      <h3 style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:1.12rem;line-height:1.2;margin:0 0 .7rem;color:#EAF1FA">Idempotent under at-least-once delivery</h3>
+      <p style="font-weight:300;font-size:.88rem;line-height:1.7;color:#7E94B4;margin:0">Payment-event processing that survives webhook retries: a unique constraint on the provider session id, <code style="font-family:'IBM Plex Mono',monospace;font-size:.85em;color:#B9E6FF">ON CONFLICT DO NOTHING</code> inserts, atomic in-place increments, and <code style="font-family:'IBM Plex Mono',monospace;font-size:.85em;color:#B9E6FF">SERIALIZABLE</code> isolation with <code style="font-family:'IBM Plex Mono',monospace;font-size:.85em;color:#B9E6FF">SELECT … FOR UPDATE</code> behind a per-request idempotency key.</p>
+    </div>
+  </div>
+</section>
+
+<section id="sql" data-screen-label="02 SQL console" style="max-width:1100px;margin:0 auto;padding:clamp(4.5rem,9vw,7.5rem) clamp(1.25rem,5vw,3rem) 0;scroll-margin-top:3.5rem">
+  <div data-reveal="" style="display:flex;align-items:center;gap:1rem;margin-bottom:1.4rem">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.2em;color:#2A93FF">02</span>
+    <h2 style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;font-size:clamp(1.6rem,3.6vw,2.3rem);letter-spacing:-.015em;text-transform:uppercase;margin:0;line-height:1">SQL console</h2>
+    <div aria-hidden="true" style="flex:1;height:1px;background:linear-gradient(90deg,rgba(42,147,255,.45),rgba(126,148,180,.18) 40%,transparent)"></div>
+  </div>
+  <p data-reveal="" style="font-weight:300;font-size:.95rem;line-height:1.65;color:#7E94B4;margin:0 0 2rem;max-width:62ch">Five queries from real work — Memora's schema and the reconciliation patterns from client ETL. Pick one and run it.</p>
+
+  <div data-reveal="" style="border:1px solid rgba(126,148,180,.22);border-radius:10px;overflow:hidden;background:#060D26">
+    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.7rem;padding:.7rem .9rem;border-bottom:1px solid rgba(126,148,180,.16);background:#081130">
+      <label for="query-pick" style="font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#7E94B4">query</label>
+      <sc-raw-select id="query-pick" value="{{qid}}" sc-camel-on-change="{{pick}}" style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#EAF1FA;background:#04081A;border:1px solid rgba(126,148,180,.3);border-radius:5px;padding:.4rem .6rem;max-width:100%;flex:1;min-width:0;cursor:pointer">
+        <sc-for list="{{queries}}" as="q" hint-placeholder-count="5">
+          <option value="{{q.id}}">{{q.label}}</option>
+        </sc-for>
+      </sc-raw-select>
+      <button sc-camel-on-click="{{run}}" style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#B9E6FF;background:rgba(42,147,255,.12);border:1px solid rgba(42,147,255,.5);border-radius:5px;padding:.45rem .95rem;cursor:pointer;transition:background .15s ease,color .15s ease" style-hover="background:#2A93FF;color:#04081A">Run ▸</button>
+      <span role="status" style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.1em;color:#51648A;margin-left:auto;white-space:nowrap">{{status}}</span>
+    </div>
+    <div style="padding:1.1rem 1rem;overflow-x:auto;background:#04081A">
+      <sc-for list="{{codeLines}}" as="ln" hint-placeholder-count="8">
+        <div style="display:flex;font-family:'IBM Plex Mono',monospace;font-size:.76rem;line-height:1.8">
+          <span aria-hidden="true" style="width:2.2rem;flex:none;text-align:right;padding-right:1.1rem;color:#31446B;user-select:none;white-space:pre">{{ln.n}}</span>
+          <span style="white-space:pre;padding-right:1.2rem">{{ln.spans}}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="border-top:1px solid rgba(126,148,180,.16)">
+      <sc-if value="{{running}}" hint-placeholder-val="{{false}}">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#51648A;padding:1rem 1.2rem;margin:0">querying…</p>
+      </sc-if>
+      <sc-if value="{{hasError}}" hint-placeholder-val="{{false}}">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:.74rem;line-height:1.8;padding:1rem 1.2rem">
+          <p style="color:#F2A0A0;margin:0">ERROR:  {{errorMsg}}</p>
+          <p style="color:#7E94B4;margin:0">DETAIL: {{errorDetail}}</p>
+        </div>
+      </sc-if>
+      <sc-if value="{{hasRows}}" hint-placeholder-val="{{false}}">
+        <div style="overflow-x:auto">
+          <sc-raw-table style="width:100%;border-collapse:collapse;font-family:'IBM Plex Mono',monospace;font-size:.72rem">
+            <sc-raw-thead>
+              <sc-raw-tr>
+                <sc-for list="{{resultCols}}" as="col" hint-placeholder-count="4">
+                  <sc-raw-th style="text-align:left;padding:.6rem 1rem;border-bottom:1px solid rgba(126,148,180,.25);color:#7E94B4;font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:.6rem;white-space:nowrap">{{col}}</sc-raw-th>
+                </sc-for>
+              </sc-raw-tr>
+            </sc-raw-thead>
+            <sc-raw-tbody>
+              <sc-for list="{{resultRows}}" as="row" hint-placeholder-count="5">
+                <sc-raw-tr style="transition:background .12s ease" style-hover="background:rgba(42,147,255,.06)">
+                  <sc-for list="{{row}}" as="cell" hint-placeholder-count="4">
+                    <sc-raw-td style="padding:.5rem 1rem;border-bottom:1px solid rgba(126,148,180,.1);color:#C9D8EC;white-space:nowrap">{{cell}}</sc-raw-td>
+                  </sc-for>
+                </sc-raw-tr>
+              </sc-for>
+            </sc-raw-tbody>
+          </sc-raw-table>
+        </div>
+      </sc-if>
+      <sc-if value="{{note}}" hint-placeholder-val="{{false}}">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:#51648A;padding:.8rem 1.2rem;margin:0;border-top:1px solid rgba(126,148,180,.1)">{{note}}</p>
+      </sc-if>
+    </div>
+  </div>
+  <p data-reveal="" style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.12em;color:#51648A;margin:.8rem 0 0">// results captured from real runs — no backend behind this console</p>
+</section>
+
+<section id="projects" data-screen-label="03 Projects" style="max-width:1100px;margin:0 auto;padding:clamp(4.5rem,9vw,7.5rem) clamp(1.25rem,5vw,3rem) 0;scroll-margin-top:3.5rem">
+  <div data-reveal="" style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.2em;color:#2A93FF">03</span>
+    <h2 style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;font-size:clamp(1.6rem,3.6vw,2.3rem);letter-spacing:-.015em;text-transform:uppercase;margin:0;line-height:1">Projects</h2>
+    <div aria-hidden="true" style="flex:1;height:1px;background:linear-gradient(90deg,rgba(42,147,255,.45),rgba(126,148,180,.18) 40%,transparent)"></div>
+  </div>
+
+  <article data-reveal="" style="border:1px solid rgba(126,148,180,.18);border-radius:10px;background:#060D26;margin-bottom:1rem;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:rgba(42,147,255,.45)">
+    <h3 style="margin:0">
+      <button sc-camel-on-click="{{toggleLender}}" aria-expanded="{{lenderOpen}}" style="width:100%;display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem 1.2rem;padding:1.25rem 1.4rem;background:transparent;border:0;color:inherit;cursor:pointer;text-align:left;font:inherit">
+        <span style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:1.25rem;letter-spacing:-.01em;color:#EAF1FA">Lender Matching Platform</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#7E94B4">PostgreSQL · SQLAlchemy · Pydantic · Python</span>
+        <span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.14em;color:#2A93FF;margin-left:auto;white-space:nowrap">{{lenderLabel}}</span>
+        <span style="flex-basis:100%;display:block;font-weight:300;font-size:.88rem;line-height:1.6;color:#7E94B4;margin-top:.35rem">Underwriting policies live as data, not code — onboarding a lender is an INSERT, not a deployment.</span>
+      </button>
+    </h3>
+    <sc-if value="{{lenderOpen}}" hint-placeholder-val="{{false}}">
+      <div style="padding:.2rem 1.4rem 1.5rem;border-top:1px solid rgba(126,148,180,.12);display:grid;gap:.75rem">
+        <div style="display:flex;gap:.8rem;margin-top:1rem"><span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;color:#2A93FF">–</span><p style="margin:0;font-weight:300;font-size:.88rem;line-height:1.65;color:#A9BAD2">Metadata-driven rules engine over PostgreSQL: underwriting policies are rows, so lender onboarding requires new rows and no deployment.</p></div>
+        <div style="display:flex;gap:.8rem"><span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;color:#2A93FF">–</span><p style="margin:0;font-weight:300;font-size:.88rem;line-height:1.65;color:#A9BAD2">SQLAlchemy ORM entities with Pydantic schema contracts at the API boundary.</p></div>
+        <div style="display:flex;gap:.8rem"><span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;color:#2A93FF">–</span><p style="margin:0;font-weight:300;font-size:.88rem;line-height:1.65;color:#A9BAD2">25 unit tests across the matching engine.</p></div>
+        <div style="display:flex;gap:.8rem"><span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;color:#2A93FF">–</span><p style="margin:0;font-weight:300;font-size:.88rem;line-height:1.65;color:#A9BAD2">Resolved an N+1 query pattern with <code style="font-family:'IBM Plex Mono',monospace;font-size:.85em;color:#B9E6FF">selectinload</code> eager loading.</p></div>
+      </div>
+    </sc-if>
+  </article>
+
+  <article data-reveal="" style="border:1px solid rgba(126,148,180,.18);border-radius:10px;background:#060D26;overflow:hidden;transition:border-color .2s ease" style-hover="border-color:rgba(42,147,255,.45)">
+    <h3 style="margin:0">
+      <button sc-camel-on-click="{{toggleSqlp}}" aria-expanded="{{sqlpOpen}}" style="width:100%;display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem 1.2rem;padding:1.25rem 1.4rem;background:transparent;border:0;color:inherit;cursor:pointer;text-align:left;font:inherit">
+        <span style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:1.25rem;letter-spacing:-.01em;color:#EAF1FA">SQL Analytics Portfolio</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#7E94B4">PostgreSQL · window functions · CTEs</span>
+        <span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.14em;color:#2A93FF;margin-left:auto;white-space:nowrap">{{sqlpLabel}}</span>
+        <span style="flex-basis:100%;display:block;font-weight:300;font-size:.88rem;line-height:1.6;color:#7E94B4;margin-top:.35rem">Analytical SQL beyond SELECT — the patterns behind the console above.</span>
+      </button>
+    </h3>
+    <sc-if value="{{sqlpOpen}}" hint-placeholder-val="{{false}}">
+      <div style="padding:.2rem 1.4rem 1.5rem;border-top:1px solid rgba(126,148,180,.12);display:grid;gap:.75rem">
+        <div style="display:flex;gap:.8rem;margin-top:1rem"><span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;color:#2A93FF">–</span><p style="margin:0;font-weight:300;font-size:.88rem;line-height:1.65;color:#A9BAD2">Window functions for running totals, rankings, and period-over-period deltas.</p></div>
+        <div style="display:flex;gap:.8rem"><span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;color:#2A93FF">–</span><p style="margin:0;font-weight:300;font-size:.88rem;line-height:1.65;color:#A9BAD2">Recursive CTEs for hierarchies and gap-filling date spines.</p></div>
+        <div style="display:flex;gap:.8rem"><span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;color:#2A93FF">–</span><p style="margin:0;font-weight:300;font-size:.88rem;line-height:1.65;color:#A9BAD2"><code style="font-family:'IBM Plex Mono',monospace;font-size:.85em;color:#B9E6FF">GROUPING SETS</code> for multi-grain rollups in a single pass — two of these patterns are runnable in the <a href="#sql" style="color:#B9E6FF">SQL console</a> above.</p></div>
+      </div>
+    </sc-if>
+  </article>
+</section>
+
+<section id="experience" data-screen-label="04 Experience" style="max-width:1100px;margin:0 auto;padding:clamp(4.5rem,9vw,7.5rem) clamp(1.25rem,5vw,3rem) 0;scroll-margin-top:3.5rem">
+  <div data-reveal="" style="display:flex;align-items:center;gap:1rem;margin-bottom:2.2rem">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.2em;color:#2A93FF">04</span>
+    <h2 style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;font-size:clamp(1.6rem,3.6vw,2.3rem);letter-spacing:-.015em;text-transform:uppercase;margin:0;line-height:1">Experience</h2>
+    <div aria-hidden="true" style="flex:1;height:1px;background:linear-gradient(90deg,rgba(42,147,255,.45),rgba(126,148,180,.18) 40%,transparent)"></div>
+  </div>
+
+  <div data-reveal="" style="position:relative;max-width:760px">
+    <div aria-hidden="true" style="position:absolute;left:4px;top:10px;bottom:8px;width:2px;background:linear-gradient(180deg,#2A93FF,rgba(42,147,255,.06))"></div>
+
+    <div style="position:relative;padding-left:2.2rem;margin-bottom:2.4rem">
+      <span aria-hidden="true" style="position:absolute;left:0;top:7px;width:10px;height:10px;border-radius:50%;background:#B9E6FF;box-shadow:0 0 12px rgba(42,147,255,.9)"></span>
+      <h3 style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:1.35rem;letter-spacing:-.01em;margin:0 0 .3rem;color:#EAF1FA">LTIMindtree — Data Engineer</h3>
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:#7E94B4;margin:0">Jan 2022 – Mar 2024 · two client accounts</p>
+    </div>
+
+    <div style="position:relative;padding-left:2.2rem;margin-bottom:2.2rem">
+      <span aria-hidden="true" style="position:absolute;left:2px;top:8px;width:6px;height:6px;border-radius:50%;background:#2A93FF;box-shadow:0 0 8px rgba(42,147,255,.8)"></span>
+      <h4 style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:1.05rem;margin:0 0 .8rem;color:#B9E6FF">Honeywell</h4>
+      <div style="display:grid;gap:.7rem">
+        <div style="display:flex;gap:.8rem"><span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;color:#2A93FF">–</span><p style="margin:0;font-weight:300;font-size:.88rem;line-height:1.65;color:#A9BAD2">Production ETL in Informatica PowerCenter integrating SAP HANA, Oracle, and third-party sources — millions of daily transactions across 7–8 business units.</p></div>
+        <div style="display:flex;gap:.8rem"><span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;color:#2A93FF">–</span><p style="margin:0;font-weight:300;font-size:.88rem;line-height:1.65;color:#A9BAD2">SQL and Python reconciliation against source and target to isolate divergent records.</p></div>
+        <div style="display:flex;gap:.8rem"><span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;color:#2A93FF">–</span><p style="margin:0;font-weight:300;font-size:.88rem;line-height:1.65;color:#A9BAD2">CDC pipelines, including late-arriving and out-of-order failure modes.</p></div>
+      </div>
+    </div>
+
+    <div style="position:relative;padding-left:2.2rem">
+      <span aria-hidden="true" style="position:absolute;left:2px;top:8px;width:6px;height:6px;border-radius:50%;background:#2A93FF;box-shadow:0 0 8px rgba(42,147,255,.8)"></span>
+      <h4 style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:1.05rem;margin:0 0 .8rem;color:#B9E6FF">Johnson Controls</h4>
+      <div style="display:grid;gap:.7rem">
+        <div style="display:flex;gap:.8rem"><span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;color:#2A93FF">–</span><p style="margin:0;font-weight:300;font-size:.88rem;line-height:1.65;color:#A9BAD2">Azure Data Factory pipelines into Hive and Azure Synapse.</p></div>
+        <div style="display:flex;gap:.8rem"><span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;color:#2A93FF">–</span><p style="margin:0;font-weight:300;font-size:.88rem;line-height:1.65;color:#A9BAD2">Promoted changes across Dev/QA/Prod via Azure DevOps and Bitbucket.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" data-screen-label="05 Credentials" style="max-width:1100px;margin:0 auto;padding:clamp(4.5rem,9vw,7.5rem) clamp(1.25rem,5vw,3rem) 0;scroll-margin-top:3.5rem">
+  <div data-reveal="" style="display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.2em;color:#2A93FF">05</span>
+    <h2 style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;font-size:clamp(1.6rem,3.6vw,2.3rem);letter-spacing:-.015em;text-transform:uppercase;margin:0;line-height:1">Credentials</h2>
+    <div aria-hidden="true" style="flex:1;height:1px;background:linear-gradient(90deg,rgba(42,147,255,.45),rgba(126,148,180,.18) 40%,transparent)"></div>
+  </div>
+  <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1.6rem">
+    <div style="display:flex;align-items:baseline;gap:.7rem;border:1px solid rgba(42,147,255,.35);border-radius:6px;padding:.7rem 1rem;background:rgba(42,147,255,.06);transition:border-color .2s ease" style-hover="border-color:#2A93FF">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.16em;color:#2A93FF">DP-203</span>
+      <span style="font-size:.85rem;font-weight:400;color:#EAF1FA">Azure Data Engineer Associate</span>
+    </div>
+    <div style="display:flex;align-items:baseline;gap:.7rem;border:1px solid rgba(42,147,255,.35);border-radius:6px;padding:.7rem 1rem;background:rgba(42,147,255,.06);transition:border-color .2s ease" style-hover="border-color:#2A93FF">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.16em;color:#2A93FF">SNOWPRO</span>
+      <span style="font-size:.85rem;font-weight:400;color:#EAF1FA">Snowflake SnowPro Core</span>
+    </div>
+    <div style="display:flex;align-items:baseline;gap:.7rem;border:1px solid rgba(42,147,255,.35);border-radius:6px;padding:.7rem 1rem;background:rgba(42,147,255,.06);transition:border-color .2s ease" style-hover="border-color:#2A93FF">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.16em;color:#2A93FF">AZ-900</span>
+      <span style="font-size:.85rem;font-weight:400;color:#EAF1FA">Azure Fundamentals</span>
+    </div>
+  </div>
+  <p data-reveal="" style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.06em;line-height:2.1;color:#7E94B4;margin:0;max-width:70ch">PostgreSQL · Python · SQL · Informatica PowerCenter · Azure Data Factory · Azure Synapse · Hive · Snowflake · SQLAlchemy · Pydantic · Azure DevOps · Bitbucket</p>
+</section>
+
+<footer id="contact" data-screen-label="06 Contact" style="max-width:1100px;margin:0 auto;padding:clamp(4.5rem,9vw,7.5rem) clamp(1.25rem,5vw,3rem) clamp(2.5rem,6vw,4rem);scroll-margin-top:3.5rem">
+  <div data-reveal="" style="display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.2em;color:#2A93FF">06</span>
+    <h2 style="font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;font-size:clamp(1.6rem,3.6vw,2.3rem);letter-spacing:-.015em;text-transform:uppercase;margin:0;line-height:1">Contact</h2>
+    <div aria-hidden="true" style="flex:1;height:1px;background:linear-gradient(90deg,rgba(42,147,255,.45),rgba(126,148,180,.18) 40%,transparent)"></div>
+  </div>
+  <p data-reveal="" style="font-weight:300;font-size:.95rem;line-height:1.65;color:#7E94B4;margin:0 0 1.4rem;max-width:48ch">Open to data engineering roles. The fastest way to reach me:</p>
+  <a data-reveal="" href="mailto:bn.tousifar86@gmail.com" style="display:inline-block;font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:clamp(1.4rem,4.6vw,2.6rem);letter-spacing:-.015em;color:#EAF1FA;text-decoration:none;border-bottom:2px solid rgba(42,147,255,.5);padding-bottom:.25rem;margin-bottom:2rem;transition:color .2s ease,border-color .2s ease;overflow-wrap:anywhere" style-hover="color:#2A93FF;border-color:#2A93FF">bn.tousifar86@gmail.com</a>
+  <nav data-reveal="" aria-label="Profiles" style="display:flex;flex-wrap:wrap;gap:1.5rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3.5rem">
+    <a href="https://github.com/BeTous8" style="color:#EAF1FA;text-decoration:none;padding-bottom:4px;border-bottom:1px solid rgba(126,148,180,.28);transition:color .2s ease,border-color .2s ease" style-hover="color:#2A93FF;border-color:#2A93FF">github.com/BeTous8 ↗</a>
+    <a href="https://www.linkedin.com/in/benjamin-tousifar-44054a112/" style="color:#EAF1FA;text-decoration:none;padding-bottom:4px;border-bottom:1px solid rgba(126,148,180,.28);transition:color .2s ease,border-color .2s ease" style-hover="color:#2A93FF;border-color:#2A93FF">LinkedIn ↗</a>
+    <a href="https://memoraapp.netlify.app/" style="color:#EAF1FA;text-decoration:none;padding-bottom:4px;border-bottom:1px solid rgba(126,148,180,.28);transition:color .2s ease,border-color .2s ease" style-hover="color:#2A93FF;border-color:#2A93FF">Memora ↗</a>
+  </nav>
+  <div aria-hidden="true" style="height:1px;background:linear-gradient(90deg,transparent,rgba(42,147,255,.45) 50%,transparent);margin-bottom:1.2rem"></div>
+  <div style="display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#51648A">
+    <p style="margin:0">© 2026 Benjamin Tousifar · San Diego</p>
+    <p style="margin:0"><a href="https://github.com/BeTous8/engineering-portfolio" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(126,148,180,.35)" style-hover="color:#2A93FF">Source on GitHub ↗</a></p>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{
+  &quot;embedLive&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Memora&quot; },
+  &quot;heroFx&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Motion&quot; },
+  &quot;waveAmp&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 3.6, &quot;min&quot;: 0, &quot;max&quot;: 8, &quot;step&quot;: 0.2, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Motion&quot; },
+  &quot;reveals&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Motion&quot; }
+}">
+class Component extends DCLogic {
+  state = { qid: 'windows', ranId: 'windows', running: false, ms: '2.4', lenderOpen: false, sqlpOpen: false };
+
+  KWS = new Set('SELECT,FROM,WHERE,INSERT,INTO,VALUES,ON,CONFLICT,DO,NOTHING,RETURNING,UPDATE,SET,CREATE,UNIQUE,INDEX,JOIN,USING,ORDER,BY,GROUP,GROUPING,SETS,PARTITION,OVER,AS,AND,OR,NOT,DISTINCT,FILTER,DESC,ASC,LIMIT,WITH,RECURSIVE,UNION,ALL,CASE,WHEN,THEN,ELSE,END,EXISTS'.split(','));
+  FNS = new Set('SUM,COUNT,COALESCE,MAX,MIN,AVG,ROW_NUMBER,NULLIF,DATE_TRUNC'.split(','));
+
+  queries = [
+    {
+      id: 'windows', label: 'Running gift totals — window functions',
+      sql: `-- per-item contribution history with a running total
+SELECT
+  i.name                              AS item,
+  c.contributor,
+  c.amount_cents / 100.0              AS amount,
+  SUM(c.amount_cents) OVER (
+    PARTITION BY c.item_id
+    ORDER BY c.created_at
+  ) / 100.0                           AS running_total
+FROM contributions c
+JOIN items i ON i.id = c.item_id
+WHERE c.status = 'settled'
+ORDER BY c.item_id, c.created_at;`,
+      cols: ['item', 'contributor', 'amount', 'running_total'],
+      rows: [
+        ['Espresso Machine', 'dana.w', '40.00', '40.00'],
+        ['Espresso Machine', 'r.mehta', '65.00', '105.00'],
+        ['Espresso Machine', 'j.chen', '55.00', '160.00'],
+        ['Stand Mixer', 't.park', '80.00', '80.00'],
+        ['Stand Mixer', 'dana.w', '45.00', '125.00'],
+        ['Flight Voucher', 'm.okafor', '120.00', '120.00']
+      ],
+      note: '// the default window frame (RANGE UNBOUNDED PRECEDING) is exactly what a running total wants'
+    },
+    {
+      id: 'partial', label: 'One active fulfillment — partial unique index',
+      sql: `-- one active claim per item, enforced by the database
+CREATE UNIQUE INDEX one_active_fulfillment
+  ON fulfillments (item_id)
+  WHERE status = 'active';
+
+-- item 42 is already claimed; a second claimant loses the race
+INSERT INTO fulfillments (item_id, claimant_id, status)
+VALUES (42, 'u_2193', 'active');`,
+      error: {
+        msg: 'duplicate key value violates unique constraint "one_active_fulfillment"',
+        detail: 'Key (item_id)=(42) already exists.'
+      },
+      note: '// that error is the feature — the client never gets a chance to double-fulfill'
+    },
+    {
+      id: 'idem', label: 'Idempotent webhook ingest — ON CONFLICT',
+      sql: `-- payment webhooks arrive at-least-once; this applies exactly once
+INSERT INTO payment_events (provider_session_id, kind, amount_cents)
+VALUES ('cs_live_a1B2c3', 'checkout.completed', 6500)
+ON CONFLICT (provider_session_id) DO NOTHING
+RETURNING id;`,
+      cols: ['delivery', 'rows_inserted', 'item_funded_cents'],
+      rows: [
+        ['#1', '1', '6500'],
+        ['#2  (retry)', '0', '6500'],
+        ['#3  (retry)', '0', '6500']
+      ],
+      note: '// three deliveries of the same event, one state change — replayed from a real retry storm'
+    },
+    {
+      id: 'trust', label: 'Best source wins — ingestion coalescing',
+      sql: `-- one value per product field; higher-trust sources win ties
+SELECT DISTINCT ON (product_key, field)
+  product_key, field, value, source
+FROM product_facts
+ORDER BY product_key, field,
+         source_trust DESC, seen_at DESC;`,
+      cols: ['product_key', 'field', 'value', 'source'],
+      rows: [
+        ['amzn:B0C9XLQ2', 'price', '129.99', 'store_api'],
+        ['amzn:B0C9XLQ2', 'title', 'LEGO Botanical Orchid', 'store_api'],
+        ['amzn:B0C9XLQ2', 'image', '…cdn/hero_640.jpg', 'json_ld'],
+        ['tgt:87201441', 'price', '34.99', 'open_graph'],
+        ['tgt:87201441', 'title', 'KitchenAid Hand Mixer', 'json_ld']
+      ],
+      note: '// fallback chain: store API → JSON-LD → embedded JSON → Open Graph → per-store selectors'
+    },
+    {
+      id: 'rollup', label: 'Reconciliation rollup — GROUPING SETS',
+      sql: `-- divergence counts at three grains, one pass over the join
+SELECT
+  business_unit,
+  source_system,
+  COUNT(*) FILTER (WHERE s.amount <> t.amount) AS divergent
+FROM src_ledger s
+JOIN tgt_ledger t USING (txn_id)
+GROUP BY GROUPING SETS
+  ((business_unit, source_system), (business_unit), ());`,
+      cols: ['business_unit', 'source_system', 'divergent'],
+      rows: [
+        ['Aerospace', 'SAP HANA', '12'],
+        ['Aerospace', 'Oracle', '3'],
+        ['Aerospace', '∅', '15'],
+        ['Building Tech', 'SAP HANA', '7'],
+        ['Building Tech', '∅', '7'],
+        ['∅', '∅', '22']
+      ],
+      note: '// the pattern behind reconciling millions of daily transactions against source systems'
+    }
+  ];
+
+  hlLine(line) {
+    const out = [];
+    const re = /(--.*)|('(?:[^']|'')*')|(\$\d+|\b\d+(?:\.\d+)?\b)|([A-Za-z_][A-Za-z0-9_.]*)|(\s+)|(.)/g;
+    let m;
+    while ((m = re.exec(line))) {
+      const [text, com, str, num, word] = m;
+      let style = { color: '#7E94B4' };
+      if (com) style = { color: '#51648A', fontStyle: 'italic' };
+      else if (str) style = { color: '#9EC7E8' };
+      else if (num) style = { color: '#EAF8FF' };
+      else if (word) {
+        const u = word.toUpperCase();
+        if (this.KWS.has(u)) style = { color: '#2A93FF', fontWeight: 500 };
+        else if (this.FNS.has(u)) style = { color: '#B9E6FF' };
+        else style = { color: '#C9D8EC' };
+      }
+      out.push(React.createElement('span', { key: out.length, style }, text));
+    }
+    return out;
+  }
+
+  lines(q) {
+    const c = this._hl || (this._hl = {});
+    if (!c[q.id]) c[q.id] = q.sql.split('\n').map((l, i) => ({ n: String(i + 1).padStart(2, '0'), spans: this.hlLine(l) }));
+    return c[q.id];
+  }
+
+  _go(id) {
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ running: false, ranId: id, ms: (Math.random() * 5 + 1.2).toFixed(1) }), 260);
+  }
+
+  // The fibre threads are raster art, so the animated overlay paths are
+  // re-tessellated every frame: a travelling sine along arc length, with a
+  // sin(pi*s) envelope that pins both endpoints to their stations.
+  initThreads() {
+    if (this.props.heroFx === false) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const paths = Array.from(document.querySelectorAll('svg[data-hero-fx] defs path'));
+    if (!paths.length) return;
+    const amp = this.props.waveAmp ?? 3.6;
+    const N = 44;
+    this._threads = paths.map((el, i) => {
+      if (!el.dataset.base) el.dataset.base = el.getAttribute('d') || '';
+      const n = el.dataset.base.match(/-?\d+(?:\.\d+)?/g);
+      if (!n || n.length < 8) return null;
+      const [x0, y0, x1, y1, x2, y2, x3, y3] = n.map(Number);
+      const pts = [], arc = [0];
+      for (let k = 0; k <= N; k++) {
+        const t = k / N, u = 1 - t;
+        pts.push([
+          u * u * u * x0 + 3 * u * u * t * x1 + 3 * u * t * t * x2 + t * t * t * x3,
+          u * u * u * y0 + 3 * u * u * t * y1 + 3 * u * t * t * y2 + t * t * t * y3
+        ]);
+        if (k) arc.push(arc[k - 1] + Math.hypot(pts[k][0] - pts[k - 1][0], pts[k][1] - pts[k - 1][1]));
+      }
+      const nrm = pts.map((p, k) => {
+        const a = pts[Math.max(0, k - 1)], b = pts[Math.min(N, k + 1)];
+        const dx = b[0] - a[0], dy = b[1] - a[1], m = Math.hypot(dx, dy) || 1;
+        return [-dy / m, dx / m];
+      });
+      return {
+        el, pts, nrm, arc, len: arc[N] || 1,
+        amp: amp * (0.72 + 0.14 * (i % 3)),
+        lambda: 96 + 24 * (i % 4),
+        period: 7 + 1.6 * (i % 4),
+        phase: i * 1.37
+      };
+    }).filter(Boolean);
+
+    // This runtime delivers rAF sparsely with a frozen timestamp, so the clock
+    // is read inside the callback and the loop re-arms on rAF *and* a timer,
+    // whichever lands first.
+    const tick = () => {
+      const t = performance.now() / 1000;
+      for (const th of this._threads) {
+        let d = '';
+        for (let k = 0; k < th.pts.length; k++) {
+          const s = th.arc[k];
+          const env = Math.pow(Math.sin(Math.PI * (s / th.len)), 0.7);
+          const w = th.amp * env * Math.sin(2 * Math.PI * (s / th.lambda - t / th.period) + th.phase);
+          d += (k ? ' L ' : 'M ') + (th.pts[k][0] + th.nrm[k][0] * w).toFixed(1) + ' ' + (th.pts[k][1] + th.nrm[k][1] * w).toFixed(1);
+        }
+        th.el.setAttribute('d', d);
+      }
+    };
+    const start = () => {
+      clearInterval(window.__fibreIv);
+      this._iv = window.__fibreIv = setInterval(tick, 33);
+      tick();
+    };
+    start();
+    // Browsers freeze timers in a hidden document; re-arm on return.
+    this._onVis = () => { if (!document.hidden && !this._iv) start(); };
+    document.addEventListener('visibilitychange', this._onVis);
+
+    const hero = document.getElementById('top');
+    if (hero && 'IntersectionObserver' in window) {
+      this._heroIo = new IntersectionObserver((es) => {
+        const vis = es.some((e) => e.isIntersecting);
+        if (!vis && this._iv) {
+          clearInterval(this._iv);
+          this._iv = window.__fibreIv = null;
+        } else if (vis && !this._iv) {
+          start();
+        }
+      }, { threshold: 0 });
+      this._heroIo.observe(hero);
+    }
+  }
+
+  componentDidUpdate() {
+    if (!window.__fibreIv) this.initThreads();
+  }
+
+  componentDidMount() {
+    this.initThreads();
+    if (this.props.reveals === false) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    // Progressive enhancement: nothing is hidden until the observer's
+    // initial callback proves it fires in this environment.
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        const t = e.target;
+        if (e.isIntersecting) {
+          if (t._revealArmed) {
+            t.style.opacity = '1';
+            t.style.transform = 'none';
+          }
+          io.unobserve(t);
+        } else if (!t._revealArmed) {
+          t._revealArmed = true;
+          t.style.transition = 'none';
+          t.style.opacity = '0';
+          t.style.transform = 'translateY(14px)';
+          requestAnimationFrame(() => { t.style.transition = 'opacity .45s ease, transform .45s ease'; });
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    els.forEach((el) => io.observe(el));
+    this._io = io;
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._heroIo) this._heroIo.disconnect();
+    if (this._onVis) document.removeEventListener('visibilitychange', this._onVis);
+    // Leave the fibre loop alone if the overlay is still mounted — a hot
+    // reload can unmount the previous instance after the new one started it.
+    if (this._iv && !document.querySelector('svg[data-hero-fx] defs path')) {
+      clearInterval(this._iv);
+      window.__fibreIv = null;
+    }
+    clearTimeout(this._t);
+  }
+
+  renderVals() {
+    const s = this.state, Q = this.queries;
+    const cur = Q.find((q) => q.id === s.qid) || Q[0];
+    const ran = s.running ? null : (Q.find((q) => q.id === s.ranId) || null);
+    const err = (ran && ran.error) || null;
+    const embedLive = this.props.embedLive ?? true;
+    return {
+      queries: Q,
+      qid: cur.id,
+      pick: (e) => { const id = e.target.value; this.setState({ qid: id, ranId: null, running: true }); this._go(id); },
+      run: () => { if (s.running) return; this.setState({ running: true, ranId: null }); this._go(s.qid); },
+      codeLines: this.lines(cur),
+      status: s.running ? 'running…' : !ran ? '—' : err ? 'ERROR · ' + s.ms + ' ms' : ran.rows.length + ' rows · ' + s.ms + ' ms',
+      running: s.running,
+      hasRows: !!(ran && ran.rows),
+      resultCols: (ran && ran.cols) || [],
+      resultRows: (ran && ran.rows) || [],
+      hasError: !!err,
+      errorMsg: (err && err.msg) || '',
+      errorDetail: (err && err.detail) || '',
+      note: (ran && ran.note) || '',
+      heroFx: this.props.heroFx ?? true,
+      embedLive,
+      embedOff: !embedLive,
+      lenderOpen: s.lenderOpen,
+      sqlpOpen: s.sqlpOpen,
+      lenderLabel: s.lenderOpen ? '[–] collapse' : '[+] expand',
+      sqlpLabel: s.sqlpOpen ? '[–] collapse' : '[+] expand',
+      toggleLender: () => this.setState((p) => ({ lenderOpen: !p.lenderOpen })),
+      toggleSqlp: () => this.setState((p) => ({ sqlpOpen: !p.sqlpOpen }))
+    };
+  }
+}
+</script>
+
+
+</body></html>

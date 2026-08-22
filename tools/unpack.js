@@ -40,11 +40,22 @@ function readBundle() {
     if (i < 0) throw new Error('bundle is missing the ' + type + ' island');
     return JSON.parse(lines[i + 1]);
   };
+  // The page markup lives in src/template.html as ordinary HTML. It started life
+  // as a JSON string inside the export's template island, which made every
+  // content edit a re-encoding exercise with a nasty failure mode (the markup
+  // contains its own </script>, so an unescaped solidus silently truncates the
+  // island). Keeping it as a real file makes edits reviewable in a diff and
+  // removes that trap entirely. The export stays the source of the ASSETS only.
+  const templatePath = path.join(SRC, 'template.html');
+  const template = fs.existsSync(templatePath)
+    ? fs.readFileSync(templatePath, 'utf8')
+    : island('template');
+
   return {
     manifest: island('manifest'),
     extResources: island('ext_resources'),
     pageOrder: island('page_order'),
-    template: island('template'),
+    template: template,
   };
 }
 
