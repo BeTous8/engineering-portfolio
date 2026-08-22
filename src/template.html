@@ -404,6 +404,16 @@ a{color:#B9E6FF}a:hover{color:#2A93FF}
 @keyframes flick-a{0%,38%{opacity:0}41%{opacity:.9}45%{opacity:.1}49%{opacity:.75}56%{opacity:.25}61%,100%{opacity:0}}
 @keyframes flick-b{0%,12%{opacity:0}15%{opacity:.8}19%{opacity:.2}24%{opacity:.65}30%{opacity:0}68%{opacity:0}72%{opacity:.7}77%,100%{opacity:0}}
 @keyframes flick-c{0%,55%{opacity:0}58%{opacity:.55}62%{opacity:.9}66%{opacity:.3}71%{opacity:.8}78%,100%{opacity:0}}
+@media (max-width:760px){
+  /* Six links wrap to two rows on a phone. Tighten the type and the bar's
+     own padding, then spend the saving on the links so every tap target
+     clears 24px. Inline styles ship with the design, hence !important. */
+  nav[aria-label="Sections"]{gap:.2rem .75rem !important;font-size:.56rem !important;letter-spacing:.09em !important;padding:.25rem 1rem !important}
+  nav[aria-label="Sections"] a{padding:.42rem 0 !important}
+  nav[aria-label="Contact"]{gap:.9rem 1.1rem !important}
+  nav[aria-label="Contact"] a,footer nav a{padding-top:.4rem !important;padding-bottom:6px !important}
+  footer a[href$="engineering-portfolio"]{display:inline-block;padding:.35rem 0 !important}
+}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}[data-hero-fx]{display:none !important}}
 </style>
 </helmet>
@@ -503,6 +513,7 @@ a{color:#B9E6FF}a:hover{color:#2A93FF}
       </svg>
       </sc-if>
     </div>
+  </div>
   <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(46% 38% at 74% 44%, rgba(42,147,255,.20), transparent 70%),radial-gradient(30% 26% at 92% 68%, rgba(74,180,255,.12), transparent 72%);mix-blend-mode:screen"></div>
   <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:var(--scrim)"></div>
 
@@ -519,7 +530,7 @@ a{color:#B9E6FF}a:hover{color:#2A93FF}
     </nav>
   </div>
   <p style="position:absolute;right:clamp(1.25rem,4vw,3rem);bottom:clamp(1.25rem,4vw,2.4rem);z-index:2;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#A9BAD2;margin:0;display:var(--caption-display);background:rgba(4,8,26,.72);padding:.35rem .6rem;border-radius:4px">Scroll</p>
-</div></header>
+</header>
 
 <section id="memora" data-screen-label="01 Shipped system" style="max-width:1100px;margin:0 auto;padding:clamp(4.5rem,9vw,7.5rem) clamp(1.25rem,5vw,3rem) 0;scroll-margin-top:3.5rem">
   <div data-reveal="" style="display:flex;align-items:center;gap:1rem;margin-bottom:1.4rem">
