@@ -15,3 +15,6 @@ npm-debug.log*
 
 # Netlify
 .netlify/
+
+# Build output — regenerate with: node tools/unpack.js
+/site/

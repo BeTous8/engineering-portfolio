@@ -1,11 +1,14 @@
 # Netlify build configuration
-# Static site — no build step, we publish the site/ directory as-is.
+#
+# tools/unpack.js expands the Claude Design export in src/ into a plain static
+# site under site/. It has no dependencies, so there is nothing to install.
 
 [build]
+  command = "node tools/unpack.js"
   publish = "site"
 
-# Default: never let the HTML entry point go stale. It is the only file
-# that changes shape between deploys right now (everything else is inlined).
+# Default: the HTML entry point must never go stale, since it is what points at
+# the content-hashed asset filenames.
 [[headers]]
   for = "/*"
   [headers.values]
@@ -15,9 +18,27 @@
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# Fingerprint-free assets that change rarely. Kept separate from the catch-all
-# above so the HTML entry point stays revalidated while these are cached hard.
+# Content-hashed assets. New bytes produce a new filename, so these can be held
+# for a year and never revalidated.
 [[headers]]
-  for = "/assets/*"
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Not hashed: src/head-meta.html points social crawlers at the hero image by a
+# fixed URL, and the favicon is requested by a conventional path. A week is a
+# reasonable compromise for both.
+[[headers]]
+  for = "/assets/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/assets/*.svg"
   [headers.values]
     Cache-Control = "public, max-age=604800"

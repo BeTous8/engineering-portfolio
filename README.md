@@ -1,69 +1,91 @@
 # Benjamin Tousifar — Data Engineer Portfolio
 
-Single-page portfolio site. Static, no build step, deployed on Netlify.
+Single-page portfolio site, deployed on Netlify at
+<https://benjamin-tousifar.netlify.app>.
 
-Sections: Hero → Live system (Memora) → SQL console → Projects → Experience → Credentials → Contact.
+Sections: Hero → Live system (Memora) → SQL console → Projects → Experience →
+Credentials → Contact.
 
 ## Repo layout
 
 ```
-netlify.toml     Netlify config — publish dir + security/cache headers
-site/            The deployed site (publish root)
-  index.html     The page
+netlify.toml        Build command, publish dir, security + cache headers
+src/
+  bundle.html       The Claude Design export (source of truth for the page)
+  head-meta.html    Social/search metadata injected into <head>
+  static/           Files copied verbatim to the site root
+tools/
+  unpack.js         Expands src/ into site/. No dependencies.
+site/               Build output — generated, not committed
 ```
 
-## Local preview
-
-Any static file server works; the page is plain HTML/JS with no build step.
+## Build
 
 ```bash
-python -m http.server 8080 --directory site
-# or
-npx serve site
+node tools/unpack.js     # writes site/
 ```
 
-Then open http://localhost:8080.
+Netlify runs exactly this. There is nothing to `npm install`.
 
-## Deploying
+To preview:
 
-Netlify builds from `main`. There is no build command — it publishes `site/`
-verbatim. Pushing to `main` triggers a production deploy; pull requests get
-deploy previews.
+```bash
+node tools/unpack.js && python -m http.server 8080 --directory site
+```
 
-## Current state / known work
+## Why there is a build step
 
-`site/index.html` is the export from Claude Design: a self-extracting bundle
-that inlines every asset (hero image, IBM Plex woff2 subsets, React 18 UMD, and
-the Claude Design runtime) as base64 in a manifest, then unpacks them to blob
-URLs on load and swaps the document.
+`src/bundle.html` is a Claude Design export: a self-extracting bundle. Every
+asset (hero image, 28 IBM Plex woff2 subsets, React 18 UMD, the Claude Design
+runtime) is base64 inside a manifest, and the page itself is a JSON-encoded
+template whose asset references are uuids. Opened directly, it decodes all of
+that to blob URLs and swaps the document at runtime.
 
-**Done**
+Served that way it worked, but cost roughly a megabyte and ~5.6s before
+anything painted, and view-source showed the bundle rather than the page.
 
-- Social/search metadata, favicon, `robots.txt`, `sitemap.xml` — these live in
-  the OUTER shell `<head>`, because crawlers don't run the bundle.
-- The Memora embed in section 01. `memoraapp.netlify.app` sent
-  `X-Frame-Options: DENY`, so the "embedded live" frame rendered as a broken
-  box. That app now sends a CSP `frame-ancestors` allowlist naming this origin
-  instead (see `next.config.mjs` in the `gift-registry` repo).
+`tools/unpack.js` performs the same substitution ahead of time against real
+files. Same markup, same behaviour — only delivery changes:
 
-**Outstanding**
+| | Bundled | Unpacked |
+|---|---|---|
+| HTML document | 984 KB | 80 KB |
+| Font files fetched | 28 (all subsets, inlined) | 6 (latin only, on demand) |
+| Font bytes | 384 KB | 134 KB |
+| Content in raw HTML | none | all of it |
+| Runtime CDN dependency | unpkg.com | none, self-hosted |
 
-- **First contentful paint is ~5.6s.** ~1MB of base64 must decode and React must
-  mount before anything is on screen. Unpacking the manifest into real files
-  under `site/assets/` and rewriting the uuid references fixes this without any
-  redesign — the bundler's own unpack logic shows exactly what to substitute.
-- No asset is independently cacheable while everything lives in one file.
-- Page content still only exists after JS runs, so search engines index very
-  little beyond the meta tags.
-- No custom domain.
+The font saving comes from `unicode-range`. Inlined as data URIs every subset is
+paid for up front; as real files the browser fetches only the subsets the page
+actually renders, so the Cyrillic, Greek and Vietnamese cuts are never touched.
 
-### Editing the page
+Assets are content-hashed (`dc-runtime.8fe7df74.js`) so they can be cached for a
+year without a re-export stranding anyone on a stale runtime. The hero image is
+deliberately *not* hashed, because `head-meta.html` points social crawlers at it
+by fixed URL.
+
+## Editing the page
 
 The markup is not plain HTML. It is a custom `x-dc` DSL (`<sc-if>`, `<sc-for>`,
 `style-hover=`, `{{bindings}}`) inside a JSON string in the `__bundler/template`
-script tag, alongside a React component class driving the SQL console.
+island of `src/bundle.html`, alongside a React component class driving the SQL
+console.
 
-If you re-encode that JSON, **escape every `/` as `/`**, the way the
-bundler does. The template contains its own `</script>` tag; written literally
-it closes the enclosing script element early and the browser parses the rest of
-the bundle as markup.
+If you re-encode that JSON, **escape every `/` as `\u002F`**, the way the bundler
+does. The template contains its own `</script>` tag; written literally it closes
+the enclosing script element early, and the browser silently parses the rest of
+the bundle as markup — element ids come out mangled and links break.
+
+## Related
+
+The Memora embed in section 01 frames <https://memoraapp.netlify.app>. That app
+(repo: `BeTous8/gift-registry`) allows it via a CSP `frame-ancestors` allowlist
+in `next.config.mjs`. If this site ever moves to another domain, that allowlist
+needs the new origin or the embed goes back to rendering as a broken box.
+
+## Outstanding
+
+- No custom domain.
+- Mobile layout has not been verified on a real device.
+- The hero JPEG is 196 KB and unoptimised; a WebP/AVIF pass would cut it
+  substantially.
